@@ -1,0 +1,7 @@
+{
+  "render_type": "translucent",
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "japan_mod:block/maple_sapling"
+  }
+}

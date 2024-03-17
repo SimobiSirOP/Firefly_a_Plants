@@ -1,0 +1,6 @@
+// 1.20.2	2024-03-17T20:11:16.895754	Tags for minecraft:item mod id japan_mod
+bd202f9f0ec94f471fd4147414fb58a6308608d5 data/minecraft/tags/items/doors.json
+6e4d469b22244204af4280c9f2d36da7bf419a70 data/minecraft/tags/items/logs.json
+6e4d469b22244204af4280c9f2d36da7bf419a70 data/minecraft/tags/items/logs_that_burn.json
+7f90075b1407ffd040e8b206d9c9c4364012f05e data/minecraft/tags/items/planks.json
+5aa8ece7bd2a8c2b19310b22141406b71db62efd data/minecraft/tags/items/trapdoors.json

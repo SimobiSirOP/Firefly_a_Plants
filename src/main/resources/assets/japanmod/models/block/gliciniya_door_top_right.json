@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_top_right",
-  "textures": {
-    "bottom": "japan:block/gliciniya_door_bottom",
-    "top": "minecraft:block/gliciniya_door_top"
-  }
-}
