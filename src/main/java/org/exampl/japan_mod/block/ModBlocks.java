@@ -14,6 +14,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -97,7 +98,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> GLICINIYA_LOG = registerBlock("gliciniya_log", ()-> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(ModBlocks.MAPLE_LOG.get())));
     public static final RegistryObject<Block> GLICINIYA_WOOD = registerBlock("gliciniya_wood", ()-> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(ModBlocks.MAPLE_WOOD.get())));
-    public static final RegistryObject<Block> GLICINIYA_PLANK = registerBlock("gliciniya_planks", ()-> new Block(BlockBehaviour.Properties.copy(ModBlocks.MAPLE_PLANKS.get())));
+    public static final RegistryObject<Block> GLICINIYA_PLANKS = registerBlock("gliciniya_planks", ()-> new Block(BlockBehaviour.Properties.copy(ModBlocks.MAPLE_PLANKS.get())));
+    public static final RegistryObject<Block> GLICINIYA_DOOR = registerBlock("gliciniya_door", ()-> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_DOOR), BlockSetType.ACACIA));
+    public static final RegistryObject<Block> GLICINIYA_TRAPDOOR = registerBlock("gliciniya_trapdoor", ()-> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_TRAPDOOR), BlockSetType.ACACIA));
    // public static final RegistryObject<Block> GLICINIYA_SAPLING = registerBlock("gliciniya_sapling", ()-> new SaplingBlock(GliciniyaTreeGrower, BlockBehaviour.Properties.copy(ModBlocks.MAPLE_SAPLING.get())));
 
 
