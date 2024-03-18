@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_orientable_trapdoor_bottom",
   "textures": {
-    "texture": "japan_modblock/gliciniya_trapdoor"
+    "texture": "japan_mod:block/gliciniya_trapdoor"
   }
 }

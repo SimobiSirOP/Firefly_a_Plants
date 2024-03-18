@@ -18,6 +18,8 @@ public class ModBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> MODFLOWERS_BIOME_MODIFIER = registerKey("pijerys_biome_modifier");
     public static final ResourceKey<BiomeModifier> ADD_TREE_MAPLE = registerKey("add_tree_maple");
+    public static final ResourceKey<BiomeModifier> ADD_TREE_GLYCINIA = registerKey("add_tree_glycinia");
+
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
@@ -26,6 +28,13 @@ public class ModBiomeModifiers {
                 biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.MAPLE_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
+        context.register(ADD_TREE_GLYCINIA, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.GLYCINIA_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+
+
     }
     private static ResourceKey<BiomeModifier> registerKey(String name){
             return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(Japan_mod.MODID, name));

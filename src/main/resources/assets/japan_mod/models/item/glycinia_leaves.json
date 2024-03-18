@@ -1,0 +1,7 @@
+{
+  "render_type": "translucent",
+  "parent": "japan_mod:block/glycinia_leaves",
+  "textures": {
+    "layer0": "japan_mod:block/glycinia_leaves"
+  }
+}

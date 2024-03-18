@@ -15,6 +15,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,6 +27,8 @@ import org.exampl.japan_mod.block.custom.LotosBlock;
 import org.exampl.japan_mod.block.custom.ModFlammableRotatedPillarBlock;
 import org.exampl.japan_mod.block.custom.RiceBlock;
 import org.exampl.japan_mod.item.ModItems;
+import org.exampl.japan_mod.worldgen.tree.MapleTreeGrower;
+import org.exampl.japan_mod.worldgen.tree.GlyciniaTreeGrower;
 import org.exampl.japan_mod.worldgen.tree.MapleTreeGrower;
 
 import java.util.function.Supplier;
@@ -41,6 +44,16 @@ public class ModBlocks {
     public static final RegistryObject<Block> GIBISKUS = registerBlock("gibiskus",
             () -> new FlowerBlock(MobEffects.HEAL, 1,
                     BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
+    public static final RegistryObject<Block> FLOWERVINE = registerBlock("flowervine",
+            () -> new VineBlock(
+                    BlockBehaviour.Properties.copy(Blocks.VINE).noOcclusion().noCollission()));
+
+    public static final RegistryObject<Block> LAVENDER = registerBlock("lavender",
+            () -> new FlowerBlock(MobEffects.HEAL, 1,
+                    BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
+
+
+
 
     public static final RegistryObject<Block> RICE = BLOCKS.register("rice",
             () -> new RiceBlock(
@@ -96,14 +109,57 @@ public class ModBlocks {
     public static final RegistryObject<Block> MAPLE_SAPLING = registerBlock("maple_sapling",
             () -> new SaplingBlock(new MapleTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
-    public static final RegistryObject<Block> GLICINIYA_LOG = registerBlock("gliciniya_log", ()-> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(ModBlocks.MAPLE_LOG.get())));
-    public static final RegistryObject<Block> GLICINIYA_WOOD = registerBlock("gliciniya_wood", ()-> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(ModBlocks.MAPLE_WOOD.get())));
-    public static final RegistryObject<Block> GLICINIYA_PLANKS = registerBlock("gliciniya_planks", ()-> new Block(BlockBehaviour.Properties.copy(ModBlocks.MAPLE_PLANKS.get())));
-    public static final RegistryObject<Block> GLICINIYA_DOOR = registerBlock("gliciniya_door", ()-> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_DOOR), BlockSetType.ACACIA));
-    public static final RegistryObject<Block> GLICINIYA_TRAPDOOR = registerBlock("gliciniya_trapdoor", ()-> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_TRAPDOOR), BlockSetType.ACACIA));
-   // public static final RegistryObject<Block> GLICINIYA_SAPLING = registerBlock("gliciniya_sapling", ()-> new SaplingBlock(GliciniyaTreeGrower, BlockBehaviour.Properties.copy(ModBlocks.MAPLE_SAPLING.get())));
+    public static final RegistryObject<Block> GLYCINIA_LOG = registerBlock("glycinia_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).strength(3f)));
+    public static final RegistryObject<Block> GLYCINIA_WOOD = registerBlock("glycinia_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(3f)));
+    public static final RegistryObject<Block> STRIPPED_GLYCINIA_LOG = registerBlock("stripped_glycinia_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(3f)));
+    public static final RegistryObject<Block> STRIPPED_GLYCINIA_WOOD = registerBlock("stripped_glycinia_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).strength(3f)));
 
+    public static final RegistryObject<Block> GLYCINIA_PLANKS = registerBlock("glycinia_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
 
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+            });
+    public static final RegistryObject<Block> GLYCINIA_LEAVES = registerBlock("glycinia_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+            });
+    public static final RegistryObject<Block> GLYCINIA_SAPLING = registerBlock("glycinia_sapling",
+            () -> new SaplingBlock(new GlyciniaTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> GLICINIYA_DOOR = registerBlock("gliciniya_door",
+            ()-> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_DOOR), BlockSetType.ACACIA));
+
+    public static final RegistryObject<Block> GLICINIYA_TRAPDOOR = registerBlock("gliciniya_trapdoor",
+            ()-> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_TRAPDOOR), BlockSetType.ACACIA));
 
     public static  <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

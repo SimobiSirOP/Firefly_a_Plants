@@ -23,19 +23,23 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.MAPLE_WOOD.get())
                 .add(ModBlocks.STRIPPED_MAPLE_LOG.get())
                 .add(ModBlocks.STRIPPED_MAPLE_WOOD.get())
-                .add(ModBlocks.GLICINIYA_LOG.get())
-                .add(ModBlocks.GLICINIYA_WOOD.get());
+                .add(ModBlocks.GLYCINIA_LOG.get())
+                .add(ModBlocks.GLYCINIA_WOOD.get())
+                .add(ModBlocks.STRIPPED_GLYCINIA_LOG.get())
+                .add(ModBlocks.STRIPPED_GLYCINIA_WOOD.get());
 
         this.tag(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.MAPLE_LOG.get())
                 .add(ModBlocks.MAPLE_WOOD.get())
                 .add(ModBlocks.STRIPPED_MAPLE_LOG.get())
                 .add(ModBlocks.STRIPPED_MAPLE_WOOD.get())
-                .add(ModBlocks.GLICINIYA_LOG.get())
-                .add(ModBlocks.GLICINIYA_WOOD.get());
+                .add(ModBlocks.GLYCINIA_LOG.get())
+                .add(ModBlocks.GLYCINIA_WOOD.get())
+                .add(ModBlocks.STRIPPED_GLYCINIA_LOG.get())
+                .add(ModBlocks.STRIPPED_GLYCINIA_WOOD.get());
 
         this.tag(BlockTags.PLANKS)
-                .add(ModBlocks.GLICINIYA_PLANKS.get())
+                .add(ModBlocks.GLYCINIA_PLANKS.get())
                 .add(ModBlocks.MAPLE_PLANKS.get());
 
         this.tag(BlockTags.DOORS)

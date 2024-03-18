@@ -1,6 +1,6 @@
-// 1.20.2	2024-03-17T20:11:16.832851	Tags for minecraft:block mod id japan_mod
+// 1.20.2	2024-03-18T00:35:50.6563657	Tags for minecraft:block mod id japan_mod
 bd202f9f0ec94f471fd4147414fb58a6308608d5 data/minecraft/tags/blocks/doors.json
-6e4d469b22244204af4280c9f2d36da7bf419a70 data/minecraft/tags/blocks/logs.json
-6e4d469b22244204af4280c9f2d36da7bf419a70 data/minecraft/tags/blocks/logs_that_burn.json
-7f90075b1407ffd040e8b206d9c9c4364012f05e data/minecraft/tags/blocks/planks.json
+135cad03ac544278f44c49b49017edaf1883e7f5 data/minecraft/tags/blocks/logs.json
+135cad03ac544278f44c49b49017edaf1883e7f5 data/minecraft/tags/blocks/logs_that_burn.json
+4970e6ddd02cd2ac1cfa3ae92bfd710fd3a8f08c data/minecraft/tags/blocks/planks.json
 5aa8ece7bd2a8c2b19310b22141406b71db62efd data/minecraft/tags/blocks/trapdoors.json

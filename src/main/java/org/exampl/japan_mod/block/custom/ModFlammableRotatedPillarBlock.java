@@ -16,6 +16,7 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
     public ModFlammableRotatedPillarBlock(Properties pProperties) {
         super(pProperties);
     }
+
     @Override
     public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
         return true;

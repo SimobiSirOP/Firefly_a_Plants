@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "japan_mod:block/rice_stage1"
+    },
+    "age=1": {
+      "model": "japan_mod:block/rice_stage2"
+    },
+    "age=2": {
+      "model": "japan_mod:block/rice_stage3"
+
+  }
+}}

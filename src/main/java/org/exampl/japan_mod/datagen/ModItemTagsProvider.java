@@ -3,10 +3,12 @@ package org.exampl.japan_mod.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.common.world.BiomeModifier;
 import org.exampl.japan_mod.Japan_mod;
 import org.exampl.japan_mod.block.ModBlocks;
 
@@ -26,19 +28,23 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModBlocks.MAPLE_WOOD.get().asItem())
                 .add(ModBlocks.STRIPPED_MAPLE_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_MAPLE_WOOD.get().asItem())
-                .add(ModBlocks.GLICINIYA_LOG.get().asItem())
-                .add(ModBlocks.GLICINIYA_WOOD.get().asItem());
+                .add(ModBlocks.GLYCINIA_LOG.get().asItem())
+                .add(ModBlocks.GLYCINIA_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_GLYCINIA_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_GLYCINIA_WOOD.get().asItem());
 
         this.tag(ItemTags.LOGS_THAT_BURN)
                 .add(ModBlocks.MAPLE_LOG.get().asItem())
                 .add(ModBlocks.MAPLE_WOOD.get().asItem())
                 .add(ModBlocks.STRIPPED_MAPLE_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_MAPLE_WOOD.get().asItem())
-                .add(ModBlocks.GLICINIYA_LOG.get().asItem())
-                .add(ModBlocks.GLICINIYA_WOOD.get().asItem());
+                .add(ModBlocks.GLYCINIA_LOG.get().asItem())
+                .add(ModBlocks.GLYCINIA_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_GLYCINIA_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_GLYCINIA_WOOD.get().asItem());
 
         this.tag(ItemTags.PLANKS)
-                .add(ModBlocks.GLICINIYA_PLANKS.get().asItem()).add(ModBlocks.MAPLE_PLANKS.get().asItem());
+                .add(ModBlocks.GLYCINIA_PLANKS.get().asItem()).add(ModBlocks.MAPLE_PLANKS.get().asItem());
         this.tag(ItemTags.DOORS)
                 .add(ModBlocks.GLICINIYA_DOOR.get().asItem());
         this.tag(ItemTags.TRAPDOORS)

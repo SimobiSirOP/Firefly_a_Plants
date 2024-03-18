@@ -2,6 +2,7 @@ package org.exampl.japan_mod;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
@@ -37,6 +38,8 @@ import org.exampl.japan_mod.entity.client.FireflyRenderer;
 import org.exampl.japan_mod.entity.custom.FireflyEntity;
 import org.exampl.japan_mod.item.ModCreativeTabs;
 import org.exampl.japan_mod.item.ModItems;
+import org.exampl.japan_mod.item.custom.ModCreativeModTabs;
+import org.exampl.japan_mod.util.ModWoodTypes;
 import org.slf4j.Logger;
 
 import static com.ibm.icu.lang.UCharacter.GraphemeClusterBreak.T;
@@ -71,6 +74,7 @@ public class Japan_mod {
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
+        // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
@@ -136,6 +140,7 @@ public class Japan_mod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.FIREFLY.get(), FireflyRenderer::new);
+            Sheets.addWoodType(ModWoodTypes.MAPLE);
         }
     }
 }

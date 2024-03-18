@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "japan_mod:block/glycinia_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "japan_mod:block/glycinia_log"
+    },
+    "axis=z": {
+      "model": "japan_mod:block/glycinia_log_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "japan_mod:block/lotos"
+      },
+      {
+        "model": "japan_mod:block/lotos",
+        "y": 90
+      },
+      {
+        "model": "japan_mod:block/lotos",
+        "y": 180
+      },
+      {
+        "model": "japan_mod:block/lotos",
+        "y": 270
+      }
+    ]
+  }
+}

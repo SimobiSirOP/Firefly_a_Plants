@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/door_top_right",
   "textures": {
-    "bottom": "japan_modblock/gliciniya_door_bottom",
+    "bottom": "japan_mod:block/gliciniya_door_bottom",
     "top": "japan_mod:block/gliciniya_door_top"
   }
 }

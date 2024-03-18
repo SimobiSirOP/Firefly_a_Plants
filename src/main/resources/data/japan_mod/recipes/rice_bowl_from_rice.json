@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "japan_mod:rice"
+      "item": "japanmod:rice"
     },
     {
       "item": "minecraft:bowl"
@@ -13,6 +13,6 @@
     }
   ],
   "result": {
-    "item": "japan_mod:rice_bowl"
+    "item": "japanmod:rice_bowl"
   }
 }

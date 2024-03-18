@@ -1,7 +1,11 @@
-// 1.20.2	2024-03-17T20:11:16.9227139	Registries
+// 1.20.2	2024-03-18T00:35:50.678332	Registries
+a9ca4ae354736662ef572b58215ffde42dd82820 data/japan_mod/forge/biome_modifier/add_tree_glycinia.json
 f110e4abde4ccaf4daa147a8228728480b14814f data/japan_mod/forge/biome_modifier/add_tree_maple.json
 39513b8fe7df2af6e5f8b05f626b4c061eb5f7ce data/japan_mod/forge/biome_modifier/pijerys_biome_modifier.json
+27f84c25c65a1da4465d2dca4ce43c63fd2ecef5 data/japan_mod/worldgen/biome/test_biome.json
+b0dfccea69d6bee82540180576f9e467ce9c3ea7 data/japan_mod/worldgen/configured_feature/glycinia.json
 b1087a6772ee3c029671e11d936fb656eecd8ec9 data/japan_mod/worldgen/configured_feature/maple.json
 33f8c83b4c6b3e9914fbc9335a2be5aee6b69557 data/japan_mod/worldgen/configured_feature/pijerys.json
+3e9e63a8ca89a619527974be6a95b68bb6f8e20b data/japan_mod/worldgen/placed_feature/glycinia_placed.json
 04d6ff8eaf243ab831c2f84d0d40092c74017f63 data/japan_mod/worldgen/placed_feature/maple_placed.json
 8c140d5e51ce805b2ac9258f9a5aa1fbeb7e36c3 data/japan_mod/worldgen/placed_feature/pijerys_placed_key.json

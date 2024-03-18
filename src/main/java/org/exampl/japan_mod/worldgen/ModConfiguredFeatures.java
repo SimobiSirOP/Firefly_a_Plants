@@ -42,6 +42,7 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> MAPLE_KEY = registerKey("maple");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MODFLOWERS_KEY = registerKey("pijerys");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> GLYCINIA_KEY = registerKey("glycinia");
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(Japan_mod.MODID, name));
     }
@@ -61,11 +62,18 @@ public class ModConfiguredFeatures {
                 8,
                 4,
                 PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new NoiseProvider(2345L, new NormalNoise.NoiseParameters(0,1.0D), 0.5F, List.of(ModBlocks.PIJERYS.get().defaultBlockState(), ModBlocks.GIBISKUS.get().defaultBlockState()))))));
+        register(context, GLYCINIA_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.GLYCINIA_LOG.get()),
+                new StraightTrunkPlacer(5, 4, 3),
+
+                BlockStateProvider.simple(ModBlocks.GLYCINIA_LEAVES.get()),
+                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+
+                new TwoLayersFeatureSize(1, 0, 2)).build());
     }
-        private static <FC extends FeatureConfiguration, F extends Feature<FC>>void register
-        (BootstapContext < ConfiguredFeature < ?, ?>>context, ResourceKey < ConfiguredFeature < ?, ?>>key, F feature, FC
-        configuration){
-            context.register(key, new ConfiguredFeature<>(feature, configuration));
+
+    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context,
+                                                                                          ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
+        context.register(key, new ConfiguredFeature<>(feature, configuration));
     }
 }
-
