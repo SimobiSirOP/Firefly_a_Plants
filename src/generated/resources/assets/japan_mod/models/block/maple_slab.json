@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "japan_mod:block/maple_planks",
+    "side": "japan_mod:block/maple_planks",
+    "top": "japan_mod:block/maple_planks"
+  }
+}

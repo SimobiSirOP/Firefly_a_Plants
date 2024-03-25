@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "japan_mod:block/maple_pressure_plate"
+    },
+    "powered=true": {
+      "model": "japan_mod:block/maple_pressure_plate_down"
+    }
+  }
+}

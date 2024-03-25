@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "japan_mod:maple_planks"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "SMS",
+    "SMS"
+  ],
+  "result": {
+    "count": 3,
+    "item": "japan_mod:maple_fence_gate"
+  },
+  "show_notification": true
+}

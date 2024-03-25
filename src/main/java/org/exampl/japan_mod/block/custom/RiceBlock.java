@@ -25,7 +25,7 @@ import net.minecraft.world.level.material.Fluids;
 import org.exampl.japan_mod.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
-public class RiceBlock extends CropBlock implements LiquidBlockContainer {
+public class RiceBlock extends CropBlock {
     public static final int MAX_AGE = 2;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
     public RiceBlock(Properties pProperties) {
@@ -39,7 +39,7 @@ public class RiceBlock extends CropBlock implements LiquidBlockContainer {
 
 
     @Override
-    protected IntegerProperty getAgeProperty(){
+    public IntegerProperty getAgeProperty(){
         return AGE;
     }
 
@@ -54,31 +54,11 @@ public class RiceBlock extends CropBlock implements LiquidBlockContainer {
     }
     @Override
     protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        FluidState fluidStateUP = pLevel.getFluidState(pPos.above(2));
-        return pState.is(BlockTags.DIRT) && fluidStateUP.getType() == Fluids.EMPTY;
+        FluidState fluidStateON = pLevel.getFluidState(pPos);
+        FluidState fluidStateUP = pLevel.getFluidState(pPos.above());
+        return fluidStateON.getType() == Fluids.WATER && fluidStateUP.getType() == Fluids.EMPTY;
     }
 
-    @Nullable
-    @Override
-    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
-        return fluidstate.is(FluidTags.WATER)&& fluidstate.getAmount()==8 ? super.getStateForPlacement(pContext) : null;
-    }
-
-    @Override
-    public boolean canPlaceLiquid(@Nullable Player player, BlockGetter blockGetter, BlockPos blockPos, BlockState blockState, Fluid fluid) {
-        return false;
-    }
-
-    @Override
-    public FluidState getFluidState(BlockState pState) {
-        return Fluids.WATER.getSource(false);
-    }
-
-    @Override
-    public boolean placeLiquid(LevelAccessor levelAccessor, BlockPos blockPos, BlockState blockState, FluidState fluidState) {
-        return false;
-    }
     @Override
     public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
         BlockPos blockpos = pPos.below();

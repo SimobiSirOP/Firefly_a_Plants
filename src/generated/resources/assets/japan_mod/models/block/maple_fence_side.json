@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "texture": "japan_mod:block/maple_planks"
+  }
+}

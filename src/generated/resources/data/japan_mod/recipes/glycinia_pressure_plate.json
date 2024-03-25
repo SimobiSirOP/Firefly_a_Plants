@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "japan_mod:glycinia_planks"
+    }
+  },
+  "pattern": [
+    "MM"
+  ],
+  "result": {
+    "item": "japan_mod:glycinia_pressure_plate"
+  },
+  "show_notification": true
+}

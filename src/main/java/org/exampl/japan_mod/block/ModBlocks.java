@@ -9,13 +9,8 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,10 +21,11 @@ import org.exampl.japan_mod.Japan_mod;
 import org.exampl.japan_mod.block.custom.LotosBlock;
 import org.exampl.japan_mod.block.custom.ModFlammableRotatedPillarBlock;
 import org.exampl.japan_mod.block.custom.RiceBlock;
+import org.exampl.japan_mod.block.custom.SpecialDoorBlock;
 import org.exampl.japan_mod.item.ModItems;
+import org.exampl.japan_mod.util.ModWoodTypes;
 import org.exampl.japan_mod.worldgen.tree.MapleTreeGrower;
 import org.exampl.japan_mod.worldgen.tree.GlyciniaTreeGrower;
-import org.exampl.japan_mod.worldgen.tree.MapleTreeGrower;
 
 import java.util.function.Supplier;
 
@@ -109,6 +105,22 @@ public class ModBlocks {
     public static final RegistryObject<Block> MAPLE_SAPLING = registerBlock("maple_sapling",
             () -> new SaplingBlock(new MapleTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
+    public static final RegistryObject<Block> MAPLE_DOOR = registerBlock("maple_door",
+            ()-> new SpecialDoorBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_DOOR), BlockSetType.ACACIA));
+
+    public static final RegistryObject<Block> MAPLE_TRAPDOOR = registerBlock("maple_trapdoor",
+            ()-> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_TRAPDOOR), BlockSetType.ACACIA));
+
+    public static final RegistryObject<Block> MAPLE_SLAB = registerBlock("maple_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.copy(ModBlocks.MAPLE_PLANKS.get())));
+    public static final RegistryObject<Block> MAPLE_STAIRS = registerBlock("maple_stairs",
+            ()-> new StairBlock(MAPLE_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(ModBlocks.MAPLE_PLANKS.get())));
+    public static final RegistryObject<Block> MAPLE_PRESSURE_PLATE = registerBlock("maple_pressure_plate",
+            ()-> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.ACACIA_PRESSURE_PLATE), BlockSetType.ACACIA));
+    public static final RegistryObject<Block> MAPLE_BUTTON = registerBlock("maple_button",
+            ()-> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.ACACIA, 30, true));
+    public static final RegistryObject<Block> MAPLE_FENCE = registerBlock("maple_fence", ()-> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+    public static final RegistryObject<Block> MAPLE_FENCE_GATE = registerBlock("maple_fence_gate", ()-> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), ModWoodTypes.MAPLE));
     public static final RegistryObject<Block> GLYCINIA_LOG = registerBlock("glycinia_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).strength(3f)));
     public static final RegistryObject<Block> GLYCINIA_WOOD = registerBlock("glycinia_wood",
@@ -155,11 +167,22 @@ public class ModBlocks {
     public static final RegistryObject<Block> GLYCINIA_SAPLING = registerBlock("glycinia_sapling",
             () -> new SaplingBlock(new GlyciniaTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
-    public static final RegistryObject<Block> GLICINIYA_DOOR = registerBlock("gliciniya_door",
-            ()-> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_DOOR), BlockSetType.ACACIA));
+    public static final RegistryObject<Block> GLYCINIA_DOOR = registerBlock("glycinia_door",
+            ()-> new SpecialDoorBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_DOOR), BlockSetType.ACACIA));
 
-    public static final RegistryObject<Block> GLICINIYA_TRAPDOOR = registerBlock("gliciniya_trapdoor",
+    public static final RegistryObject<Block> GLYCINIA_TRAPDOOR = registerBlock("glycinia_trapdoor",
             ()-> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_TRAPDOOR), BlockSetType.ACACIA));
+
+    public static final RegistryObject<Block> GLYCINIA_SLAB = registerBlock("glycinia_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.copy(ModBlocks.MAPLE_PLANKS.get())));
+    public static final RegistryObject<Block> GLYCINIA_STAIRS = registerBlock("glycinia_stairs",
+            ()-> new StairBlock(GLYCINIA_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(ModBlocks.MAPLE_PLANKS.get())));
+    public static final RegistryObject<Block> GLYCINIA_PRESSURE_PLATE = registerBlock("glycinia_pressure_plate",
+            ()-> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.ACACIA_PRESSURE_PLATE), BlockSetType.ACACIA));
+    public static final RegistryObject<Block> GLYCINIA_BUTTON = registerBlock("glycinia_button",
+            ()-> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.ACACIA, 30, true));
+    public static final RegistryObject<Block> GLYCINIA_FENCE = registerBlock("glycinia_fence", ()-> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+    public static final RegistryObject<Block> GLYCINIA_FENCE_GATE = registerBlock("glycinia_fence_gate", ()-> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), ModWoodTypes.GLYCINIA));
 
     public static  <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

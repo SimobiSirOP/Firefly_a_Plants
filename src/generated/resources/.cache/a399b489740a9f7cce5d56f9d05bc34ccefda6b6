@@ -1,6 +1,17 @@
-// 1.20.2	2024-03-18T00:35:50.6563657	Tags for minecraft:block mod id japan_mod
-bd202f9f0ec94f471fd4147414fb58a6308608d5 data/minecraft/tags/blocks/doors.json
+// 1.20.2	2024-03-25T18:58:38.71232	Tags for minecraft:block mod id japan_mod
+f89fdd447daf2d131a2561dfc922791be6e409eb data/japan_mod/tags/blocks/glycinia_logs.json
+d24ee4c128456ee37f992a9aecb84b9b47f9ddea data/japan_mod/tags/blocks/maple_logs.json
+9f4ca2e7c024637621a8d79975b1f5675edc5dbe data/minecraft/tags/blocks/buttons.json
+0c3dd89e7e63eb9463a9abd26f1a401a9dadd56c data/minecraft/tags/blocks/doors.json
 135cad03ac544278f44c49b49017edaf1883e7f5 data/minecraft/tags/blocks/logs.json
 135cad03ac544278f44c49b49017edaf1883e7f5 data/minecraft/tags/blocks/logs_that_burn.json
 4970e6ddd02cd2ac1cfa3ae92bfd710fd3a8f08c data/minecraft/tags/blocks/planks.json
-5aa8ece7bd2a8c2b19310b22141406b71db62efd data/minecraft/tags/blocks/trapdoors.json
+9c7a928e3401333784569b30faa48d422405dad2 data/minecraft/tags/blocks/slabs.json
+8655114a9b5b749a3d14a5243b118acd716a2b19 data/minecraft/tags/blocks/stairs.json
+0e4474366ca7c27088a861427b5bc0ac0f5135b6 data/minecraft/tags/blocks/trapdoors.json
+9f4ca2e7c024637621a8d79975b1f5675edc5dbe data/minecraft/tags/blocks/wooden_buttons.json
+f418ec9a866cdbcae8d372dc83ea4ecfe2d95997 data/minecraft/tags/blocks/wooden_doors.json
+9ee9816392ab65a3d996aa14ca378a3c58eafcd6 data/minecraft/tags/blocks/wooden_pressure_plates.json
+9c7a928e3401333784569b30faa48d422405dad2 data/minecraft/tags/blocks/wooden_slabs.json
+8655114a9b5b749a3d14a5243b118acd716a2b19 data/minecraft/tags/blocks/wooden_stairs.json
+9ddcab91761f9310f03d695a5c70a9122a5f686d data/minecraft/tags/blocks/wooden_trapdoors.json

@@ -6,4 +6,5 @@ import org.exampl.japan_mod.Japan_mod;
 
 public class ModWoodTypes {
     public static final WoodType MAPLE = WoodType.register(new WoodType(Japan_mod.MODID + ":maple", BlockSetType.OAK));
+    public static final WoodType GLYCINIA = WoodType.register(new WoodType(Japan_mod.MODID + ":glycinia", BlockSetType.OAK));
 }
