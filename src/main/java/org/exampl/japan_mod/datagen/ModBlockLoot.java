@@ -64,6 +64,10 @@ public class ModBlockLoot extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.GLYCINIA_LOG.get());
         this.add(ModBlocks.GLYCINIA_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.GLYCINIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(ModBlocks.GLYCINIA_VINE.get(), block -> createShearsOnlyDrop(block)
+                );
+        this.add(ModBlocks.BIOME_FLOWER_CARPET.get(), block -> createShearsOnlyDrop(block)
+        );
         this.dropSelf(ModBlocks.GLYCINIA_SAPLING.get());
         this.add(ModBlocks.GLYCINIA_DOOR.get(),
                 block -> createDoorTable(ModBlocks.GLYCINIA_DOOR.get()));

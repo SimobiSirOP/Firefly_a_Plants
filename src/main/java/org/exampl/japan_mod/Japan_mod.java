@@ -1,24 +1,11 @@
 package org.exampl.japan_mod;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -29,24 +16,15 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import org.exampl.japan_mod.block.ModBlocks;
 import org.exampl.japan_mod.entity.ModEntities;
 import org.exampl.japan_mod.entity.client.FireflyRenderer;
-import org.exampl.japan_mod.entity.custom.FireflyEntity;
+import org.exampl.japan_mod.entity.client.ModBoatRenderer;
 import org.exampl.japan_mod.item.ModCreativeTabs;
 import org.exampl.japan_mod.item.ModItems;
-import org.exampl.japan_mod.item.custom.ModCreativeModTabs;
 import org.exampl.japan_mod.util.ModWoodTypes;
+import org.exampl.japan_mod.worldgen.ModConfiguredFeatures;
 import org.slf4j.Logger;
-
-import static com.ibm.icu.lang.UCharacter.GraphemeClusterBreak.T;
-import static net.minecraft.core.registries.Registries.ENTITY_TYPE;
-import static org.exampl.japan_mod.entity.ModEntities.ENTITY_TYPES;
-import static org.exampl.japan_mod.entity.ModEntities.FIREFLY;
-import org.exampl.japan_mod.entity.ModEntities.*;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Japan_mod.MODID)
@@ -64,10 +42,10 @@ public class Japan_mod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-        ModCreativeTabs.register(modEventBus);
-        modEventBus.addListener(this::commonSetup);
-
         ModEntities.register(modEventBus);
+        ModCreativeTabs.register(modEventBus);
+        ModConfiguredFeatures.register(modEventBus);
+        modEventBus.addListener(this::commonSetup);
 
 
 
@@ -88,49 +66,12 @@ public class Japan_mod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if(event.getTabKey()==CreativeModeTabs.NATURAL_BLOCKS){
-            event.accept(ModBlocks.PIJERYS);
-        }
-
-        if(event.getTabKey()==CreativeModeTabs.NATURAL_BLOCKS){
-            event.accept(ModBlocks.GIBISKUS);
-        }
-
-        if(event.getTabKey()==CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.RICE_SEEDS);
-        }
-
-
-        if(event.getTabKey()==CreativeModeTabs.NATURAL_BLOCKS){
-            event.accept(ModItems.RICE);
-        }
-
-        if(event.getTabKey()==CreativeModeTabs.FOOD_AND_DRINKS){
-            event.accept(ModItems.RICE_BOWL);
-
-        }
-        if(event.getTabKey()==CreativeModeTabs.NATURAL_BLOCKS){
-            event.accept(ModBlocks.LOTOS);
-
-        }
-        if(event.getTabKey()==CreativeModeTabs.NATURAL_BLOCKS){
-            event.accept(ModBlocks.MAPLE_LOG);
-        }
-        if(event.getTabKey()==CreativeModeTabs.NATURAL_BLOCKS){
-            event.accept(ModBlocks.MAPLE_LEAVES);
-        }
-        if(event.getTabKey()==CreativeModeTabs.NATURAL_BLOCKS){
-            event.accept(ModBlocks.MAPLE_WOOD);
-        }
-        if(event.getTabKey()==CreativeModeTabs.NATURAL_BLOCKS){
-            event.accept(ModBlocks.MAPLE_SAPLING);
-        }
 
     }
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-        LOGGER.info("HELLO from server starting");
+        LOGGER.info("Eating Rice...");
 
     }
 
@@ -140,7 +81,10 @@ public class Japan_mod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.FIREFLY.get(), FireflyRenderer::new);
+            EntityRenderers.register(ModEntities.MODBOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
+            EntityRenderers.register(ModEntities.MODCHESTBOAT.get(), pContext -> new ModBoatRenderer(pContext, true));
             Sheets.addWoodType(ModWoodTypes.MAPLE);
+            Sheets.addWoodType(ModWoodTypes.GLYCINIA);
         }
     }
 }

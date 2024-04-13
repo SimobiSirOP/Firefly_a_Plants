@@ -1,6 +1,9 @@
-// 1.20.2	2024-03-25T18:58:38.7402799	Item Models: japan_mod
+// 1.20.2	2024-04-12T19:41:16.5305566	Item Models: japan_mod
+671642d77f9c4f68b1922c8fd3cf23f76e03de57 assets/japan_mod/models/item/firefly_spawn_egg.json
 a3ac1af52f048fa3a8e337eca302cd1569f5b93e assets/japan_mod/models/item/gibiskus.json
+2b48517aec26fcaca3adb800642c5c0f6e7e1991 assets/japan_mod/models/item/glycinia_boat.json
 af03fe04b6546a514b663bb8c21c78c5c0ab31b3 assets/japan_mod/models/item/glycinia_button.json
+0f19246b3f8b219895753acf393dc2fda94e43a5 assets/japan_mod/models/item/glycinia_chest_boat.json
 86b52c35975ca9c9472b5ad90cb1b3499fc280d4 assets/japan_mod/models/item/glycinia_door.json
 2e8006bd07d82198f0d7ddb7438cd77dd2fb506e assets/japan_mod/models/item/glycinia_fence.json
 4e2b3c0081f7ec0b199f9549200ed890b47fca43 assets/japan_mod/models/item/glycinia_fence_gate.json
@@ -9,8 +12,11 @@ ad50ac5220729bd035a6b0938f83400e7f7e5b20 assets/japan_mod/models/item/glycinia_s
 dffaea584dede2738da73e42ea1ba6f65d291b63 assets/japan_mod/models/item/glycinia_slab.json
 d5b8fe134eb09678defae6971e7a947c36aab190 assets/japan_mod/models/item/glycinia_stairs.json
 7b746ccd2033247ee525e0fdfc6e7f7d69920126 assets/japan_mod/models/item/glycinia_trapdoor.json
+ccdd469d12700f7aa0842456e3e9db3466a4145b assets/japan_mod/models/item/glycinia_vine.json
 29f2b3fedb7bf9f64e08cdb7455517bfce7935ff assets/japan_mod/models/item/lavender.json
+87fac694cf8904c0e8b96b4a424ef84024964750 assets/japan_mod/models/item/maple_boat.json
 fa65d356e037e4e977803cb52fef7b8f4ee4c06f assets/japan_mod/models/item/maple_button.json
+ac2775ba6e113a365c74233d0603057979bb616c assets/japan_mod/models/item/maple_chest_boat.json
 ee093e0fdb93eedbc7f92c829810679859fe0b51 assets/japan_mod/models/item/maple_door.json
 cd8a0bdab29e8db7e515b29df035ef317d4f358a assets/japan_mod/models/item/maple_fence.json
 1c73726ee1ad40557a5ba56b44c1e1f31e80f2aa assets/japan_mod/models/item/maple_fence_gate.json

@@ -15,6 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.exampl.japan_mod.Japan_mod;
 import org.exampl.japan_mod.block.ModBlocks;
+import org.exampl.japan_mod.block.custom.GlyciniaVine;
 import org.exampl.japan_mod.block.custom.RiceBlock;
 
 import java.util.function.Function;
@@ -30,11 +31,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
         crossBlock(ModBlocks.PIJERYS);
         simpleBlock(ModBlocks.LAVENDER.get(), models().crop(ForgeRegistries.BLOCKS.getKey(ModBlocks.LAVENDER.get()).getPath(), blockTexture(ModBlocks.LAVENDER.get())).renderType("cutout"));
         makeRiceCrop((CropBlock) ModBlocks.RICE.get(), "rice_stage_");
+        simpleBlock(ModBlocks.BIOME_FLOWER_CARPET.get(), models().carpet(ForgeRegistries.BLOCKS.getKey(ModBlocks.BIOME_FLOWER_CARPET.get()).getPath(), blockTexture(ModBlocks.BIOME_FLOWER_CARPET.get())).renderType("cutout"));
+            blockItem(ModBlocks.BIOME_FLOWER_CARPET);
         // MAPLE
 
         logBlock((RotatedPillarBlock) ModBlocks.MAPLE_LOG.get());
         blockItem(ModBlocks.MAPLE_LOG);
         axisBlock((RotatedPillarBlock) ModBlocks.MAPLE_WOOD.get(), blockTexture(ModBlocks.MAPLE_LOG.get()),blockTexture(ModBlocks.MAPLE_LOG.get()));
+        blockItem(ModBlocks.MAPLE_WOOD);
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_MAPLE_LOG.get()), blockTexture(ModBlocks.STRIPPED_MAPLE_LOG.get()), new ResourceLocation(Japan_mod.MODID, "block/stripped_maple_log_top"));
+            blockItem(ModBlocks.STRIPPED_MAPLE_LOG);
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_MAPLE_WOOD.get()), blockTexture(ModBlocks.STRIPPED_MAPLE_LOG.get()), blockTexture(ModBlocks.STRIPPED_MAPLE_LOG.get()));
+            blockItem(ModBlocks.STRIPPED_MAPLE_WOOD);
         cubeBlockWithItem(ModBlocks.MAPLE_PLANKS);
         leavesBlockWithItem(ModBlocks.MAPLE_LEAVES);
         crossBlock(ModBlocks.MAPLE_SAPLING);
@@ -44,15 +52,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairsBlock(((StairBlock) ModBlocks.MAPLE_STAIRS.get()), blockTexture(ModBlocks.MAPLE_PLANKS.get()));
         pressurePlateBlock((PressurePlateBlock) ModBlocks.MAPLE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.MAPLE_PLANKS.get()));
         buttonBlock(((ButtonBlock) ModBlocks.MAPLE_BUTTON.get()), blockTexture(ModBlocks.MAPLE_PLANKS.get()));
-        blockItem(ModBlocks.MAPLE_WOOD);
         fenceBlockWithRenderType(((FenceBlock) ModBlocks.MAPLE_FENCE.get()), blockTexture(ModBlocks.MAPLE_PLANKS.get()), "cutout");
         fenceGateBlockWithRenderType(((FenceGateBlock) ModBlocks.MAPLE_FENCE_GATE.get()), blockTexture(ModBlocks.MAPLE_PLANKS.get()), "cutout");
 
         // GLYCINIA
 
         logBlock((RotatedPillarBlock) ModBlocks.GLYCINIA_LOG.get());
-        blockItem(ModBlocks.GLYCINIA_LOG);
+            blockItem(ModBlocks.GLYCINIA_LOG);
         axisBlock((RotatedPillarBlock) ModBlocks.GLYCINIA_WOOD.get(), blockTexture(ModBlocks.GLYCINIA_LOG.get()),blockTexture(ModBlocks.GLYCINIA_LOG.get()));
+            blockItem(ModBlocks.GLYCINIA_WOOD);
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_GLYCINIA_LOG.get()), blockTexture(ModBlocks.STRIPPED_GLYCINIA_LOG.get()), new ResourceLocation(Japan_mod.MODID, "block/stripped_glycinia_log_top"));
+            blockItem(ModBlocks.STRIPPED_GLYCINIA_LOG);
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_GLYCINIA_WOOD.get()), blockTexture(ModBlocks.STRIPPED_GLYCINIA_LOG.get()), blockTexture(ModBlocks.STRIPPED_GLYCINIA_LOG.get()));
+            blockItem(ModBlocks.STRIPPED_GLYCINIA_WOOD);
         cubeBlockWithItem(ModBlocks.GLYCINIA_PLANKS);
         leavesBlockWithItem(ModBlocks.GLYCINIA_LEAVES);
         crossBlock(ModBlocks.GLYCINIA_SAPLING);
@@ -62,9 +74,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairsBlock(((StairBlock) ModBlocks.GLYCINIA_STAIRS.get()), blockTexture(ModBlocks.GLYCINIA_PLANKS.get()));
         pressurePlateBlock((PressurePlateBlock) ModBlocks.GLYCINIA_PRESSURE_PLATE.get(), blockTexture(ModBlocks.GLYCINIA_PLANKS.get()));
         buttonBlock(((ButtonBlock) ModBlocks.GLYCINIA_BUTTON.get()), blockTexture(ModBlocks.GLYCINIA_PLANKS.get()));
-        blockItem(ModBlocks.GLYCINIA_WOOD);
         fenceBlockWithRenderType(((FenceBlock) ModBlocks.GLYCINIA_FENCE.get()), blockTexture(ModBlocks.GLYCINIA_PLANKS.get()), "cutout");
         fenceGateBlockWithRenderType(((FenceGateBlock) ModBlocks.GLYCINIA_FENCE_GATE.get()), blockTexture(ModBlocks.GLYCINIA_PLANKS.get()), "cutout");
+        makeGlyciniaVine(((CropBlock) ModBlocks.GLYCINIA_VINE.get()), "glycinia_vine_");
     }
     private String getPath(RegistryObject<Block> blockOfMod){
         return ForgeRegistries.BLOCKS.getKey(blockOfMod.get()).getPath();
@@ -99,6 +111,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
         ConfiguredModel[] models = new ConfiguredModel[1];
         models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((RiceBlock) block).getAgeProperty()),
                 new ResourceLocation(Japan_mod.MODID, "block/" + textureName + state.getValue(((RiceBlock) block).getAgeProperty()))).renderType("cutout"));
+
+        return models;
+    }
+    private void makeGlyciniaVine(CropBlock block, String modelName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> GlyciniaVineStates(state, block, modelName, modelName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] GlyciniaVineStates(BlockState state, CropBlock block, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().cross(modelName + state.getValue(((GlyciniaVine) block).getAgeProperty()),
+                new ResourceLocation(Japan_mod.MODID, "block/" + textureName + state.getValue(((GlyciniaVine) block).getAgeProperty()))).renderType("cutout"));
 
         return models;
     }

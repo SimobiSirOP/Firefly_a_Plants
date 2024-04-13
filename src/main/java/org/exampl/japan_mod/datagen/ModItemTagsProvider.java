@@ -11,6 +11,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.world.BiomeModifier;
 import org.exampl.japan_mod.Japan_mod;
 import org.exampl.japan_mod.block.ModBlocks;
+import org.exampl.japan_mod.item.ModItems;
 import org.exampl.japan_mod.util.ModTags;
 
 import javax.annotation.Nullable;
@@ -24,6 +25,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        this.tag(ItemTags.BOATS)
+                .add(ModItems.MAPLE_BOAT.get().asItem())
+                .add(ModItems.GLYCINIA_BOAT.get().asItem());
+        this.tag(ItemTags.CHEST_BOATS)
+                .add(ModItems.MAPLE_CHEST_BOAT.get().asItem())
+                .add(ModItems.GLYCINIA_CHEST_BOAT.get().asItem());
         this.tag(ItemTags.LOGS)
                 .add(ModBlocks.MAPLE_LOG.get().asItem())
                 .add(ModBlocks.MAPLE_WOOD.get().asItem())
@@ -33,12 +40,29 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModBlocks.GLYCINIA_WOOD.get().asItem())
                 .add(ModBlocks.STRIPPED_GLYCINIA_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_GLYCINIA_WOOD.get().asItem());
-
+        this.tag(ItemTags.LEAVES)
+                .add(ModBlocks.MAPLE_LEAVES.get().asItem())
+                .add(ModBlocks.GLYCINIA_LEAVES.get().asItem());
+        this.tag(ItemTags.FLOWERS)
+                .add(ModBlocks.GIBISKUS.get().asItem())
+                .add(ModBlocks.PIJERYS.get().asItem());
         this.tag(ItemTags.LOGS_THAT_BURN)
                 .add(ModBlocks.MAPLE_LOG.get().asItem())
                 .add(ModBlocks.MAPLE_WOOD.get().asItem())
                 .add(ModBlocks.STRIPPED_MAPLE_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_MAPLE_WOOD.get().asItem())
+                .add(ModBlocks.GLYCINIA_LOG.get().asItem())
+                .add(ModBlocks.GLYCINIA_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_GLYCINIA_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_GLYCINIA_WOOD.get().asItem());
+
+        this.tag(ModTags.Items.MAPLE_LOGS)
+                .add(ModBlocks.MAPLE_LOG.get().asItem())
+                .add(ModBlocks.MAPLE_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_MAPLE_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_MAPLE_WOOD.get().asItem());
+
+        this.tag(ModTags.Items.GLYCINIA_LOGS)
                 .add(ModBlocks.GLYCINIA_LOG.get().asItem())
                 .add(ModBlocks.GLYCINIA_WOOD.get().asItem())
                 .add(ModBlocks.STRIPPED_GLYCINIA_LOG.get().asItem())
@@ -62,6 +86,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ItemTags.BUTTONS)
                 .add(ModBlocks.MAPLE_BUTTON.get().asItem())
                 .add(ModBlocks.GLYCINIA_BUTTON.get().asItem());
+        this.tag(ItemTags.FENCES)
+                .add(ModBlocks.MAPLE_FENCE.get().asItem())
+                .add(ModBlocks.GLYCINIA_FENCE.get().asItem());
+        this.tag(ItemTags.FENCE_GATES)
+                .add(ModBlocks.MAPLE_FENCE_GATE.get().asItem())
+                .add(ModBlocks.GLYCINIA_FENCE_GATE.get().asItem());
         this.tag(ItemTags.WOODEN_DOORS)
                 .add(ModBlocks.GLYCINIA_DOOR.get().asItem());
         this.tag(ItemTags.WOODEN_TRAPDOORS)
@@ -78,12 +108,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ItemTags.WOODEN_BUTTONS)
                 .add(ModBlocks.MAPLE_BUTTON.get().asItem())
                 .add(ModBlocks.GLYCINIA_BUTTON.get().asItem());
-        this.tag(ModTags.Items.MAPLE_LOGS)
-                .add(ModBlocks.MAPLE_LOG.get().asItem())
-                .add(ModBlocks.MAPLE_WOOD.get().asItem());
-        this.tag(ModTags.Items.GLYCINIA_LOGS)
-                .add(ModBlocks.GLYCINIA_LOG.get().asItem())
-                .add(ModBlocks.GLYCINIA_WOOD.get().asItem());
 
     }
 }

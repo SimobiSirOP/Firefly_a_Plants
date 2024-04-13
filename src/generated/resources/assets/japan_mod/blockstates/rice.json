@@ -8,6 +8,9 @@
     },
     "age=2": {
       "model": "japan_mod:block/rice_stage_2"
+    },
+    "age=3": {
+      "model": "japan_mod:block/rice_stage_3"
     }
   }
 }

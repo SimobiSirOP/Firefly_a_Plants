@@ -34,6 +34,8 @@ public class ModItemModelProvider extends ItemModelProvider {
             evenSimplerBlockItem(ModBlocks.MAPLE_FENCE_GATE);
             trapdoorItem(ModBlocks.MAPLE_TRAPDOOR);
             inBlocksBlockItem(ModBlocks.MAPLE_SAPLING);
+            simpleItem(ModItems.MAPLE_BOAT);
+            simpleItem(ModItems.MAPLE_CHEST_BOAT);
 
             simpleBlockItem(ModBlocks.GLYCINIA_DOOR);
             fenceItem(ModBlocks.GLYCINIA_FENCE, ModBlocks.GLYCINIA_PLANKS);
@@ -47,6 +49,13 @@ public class ModItemModelProvider extends ItemModelProvider {
             inBlocksBlockItem(ModBlocks.LAVENDER);
             simpleBlockItem(ModBlocks.GIBISKUS);
             simpleBlockItem(ModBlocks.PIJERYS);
+            simpleBlockItem(ModBlocks.GLYCINIA_VINE);
+            simpleItem(ModItems.GLYCINIA_BOAT);
+            simpleItem(ModItems.GLYCINIA_CHEST_BOAT);
+            this.withExistingParent(ModItems.FIREFLY_SPAWN_EGG.getId().getPath(),
+                    new ResourceLocation("item/generated"))
+                    .texture("layer0", new ResourceLocation(Japan_mod.MODID, "item/"+ ModItems.FIREFLY_SPAWN_EGG.getId().getPath()+ "_0"))
+                    .texture("layer1", new ResourceLocation(Japan_mod.MODID, "item/"+ ModItems.FIREFLY_SPAWN_EGG.getId().getPath()+ "_1"));
     }
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),

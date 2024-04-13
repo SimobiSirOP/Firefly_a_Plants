@@ -1,6 +1,8 @@
 {
   "values": [
     "japan_mod:maple_log",
-    "japan_mod:maple_wood"
+    "japan_mod:maple_wood",
+    "japan_mod:stripped_maple_log",
+    "japan_mod:stripped_maple_wood"
   ]
 }

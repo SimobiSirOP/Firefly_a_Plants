@@ -26,8 +26,8 @@ import org.exampl.japan_mod.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 public class RiceBlock extends CropBlock {
-    public static final int MAX_AGE = 2;
-    public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
+    public static final int MAX_AGE = 3;
+    public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
     public RiceBlock(Properties pProperties) {
         super(pProperties);
     }

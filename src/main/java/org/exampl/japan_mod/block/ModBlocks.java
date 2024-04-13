@@ -18,10 +18,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.exampl.japan_mod.Japan_mod;
-import org.exampl.japan_mod.block.custom.LotosBlock;
-import org.exampl.japan_mod.block.custom.ModFlammableRotatedPillarBlock;
-import org.exampl.japan_mod.block.custom.RiceBlock;
-import org.exampl.japan_mod.block.custom.SpecialDoorBlock;
+import org.exampl.japan_mod.block.custom.*;
 import org.exampl.japan_mod.item.ModItems;
 import org.exampl.japan_mod.util.ModWoodTypes;
 import org.exampl.japan_mod.worldgen.tree.MapleTreeGrower;
@@ -164,6 +161,9 @@ public class ModBlocks {
                     return 30;
                 }
             });
+
+    public static final RegistryObject<Block> GLYCINIA_VINE = registerBlock("glycinia_vine",
+            () -> new GlyciniaVine(BlockBehaviour.Properties.copy(Blocks.VINE)));
     public static final RegistryObject<Block> GLYCINIA_SAPLING = registerBlock("glycinia_sapling",
             () -> new SaplingBlock(new GlyciniaTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
@@ -183,6 +183,7 @@ public class ModBlocks {
             ()-> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.ACACIA, 30, true));
     public static final RegistryObject<Block> GLYCINIA_FENCE = registerBlock("glycinia_fence", ()-> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
     public static final RegistryObject<Block> GLYCINIA_FENCE_GATE = registerBlock("glycinia_fence_gate", ()-> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), ModWoodTypes.GLYCINIA));
+    public static final RegistryObject<Block> BIOME_FLOWER_CARPET = registerBlock("biome_flower_carpet", () -> new BiomeFlowerCarpetBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_CARPET).replaceable().noCollission().instabreak().sound(SoundType.GRASS).mapColor(MapColor.PLANT)));
 
     public static  <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

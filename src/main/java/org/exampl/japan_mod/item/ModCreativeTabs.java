@@ -16,9 +16,13 @@ public class ModCreativeTabs {
         pItemOutput.accept(ModItems.LOTOS.get());
         pItemOutput.accept(ModBlocks.PIJERYS.get());
         pItemOutput.accept(ModBlocks.GIBISKUS.get());
+        pItemOutput.accept(ModBlocks.LAVENDER.get());
+        pItemOutput.accept(ModBlocks.BIOME_FLOWER_CARPET.get());
+
         pItemOutput.accept(ModBlocks.MAPLE_LOG.get());
         pItemOutput.accept(ModBlocks.MAPLE_WOOD.get());
-
+        pItemOutput.accept(ModBlocks.STRIPPED_MAPLE_LOG.get());
+        pItemOutput.accept(ModBlocks.STRIPPED_MAPLE_WOOD.get());
         pItemOutput.accept(ModBlocks.MAPLE_LEAVES.get());
         pItemOutput.accept(ModBlocks.MAPLE_SAPLING.get());
         pItemOutput.accept(ModBlocks.MAPLE_PLANKS.get());
@@ -30,10 +34,16 @@ public class ModCreativeTabs {
         pItemOutput.accept(ModBlocks.MAPLE_BUTTON.get());
         pItemOutput.accept(ModBlocks.MAPLE_FENCE.get());
         pItemOutput.accept(ModBlocks.MAPLE_FENCE_GATE.get());
+        pItemOutput.accept(ModItems.MAPLE_BOAT.get());
+        pItemOutput.accept(ModItems.MAPLE_CHEST_BOAT.get());
+
         pItemOutput.accept(ModBlocks.GLYCINIA_LOG.get());
         pItemOutput.accept(ModBlocks.GLYCINIA_WOOD.get());
+        pItemOutput.accept(ModBlocks.STRIPPED_GLYCINIA_LOG.get());
+        pItemOutput.accept(ModBlocks.STRIPPED_GLYCINIA_WOOD.get());
         pItemOutput.accept(ModBlocks.GLYCINIA_LEAVES.get());
         pItemOutput.accept(ModBlocks.GLYCINIA_SAPLING.get());
+        pItemOutput.accept(ModBlocks.GLYCINIA_VINE.get());
         pItemOutput.accept(ModBlocks.GLYCINIA_PLANKS.get());
         pItemOutput.accept(ModBlocks.GLYCINIA_DOOR.get());
         pItemOutput.accept(ModBlocks.GLYCINIA_TRAPDOOR.get());
@@ -43,9 +53,12 @@ public class ModCreativeTabs {
         pItemOutput.accept(ModBlocks.GLYCINIA_BUTTON.get());
         pItemOutput.accept(ModBlocks.GLYCINIA_FENCE.get());
         pItemOutput.accept(ModBlocks.GLYCINIA_FENCE_GATE.get());
+        pItemOutput.accept(ModItems.GLYCINIA_BOAT.get());
+        pItemOutput.accept(ModItems.GLYCINIA_CHEST_BOAT.get());
         pItemOutput.accept(ModItems.RICE.get());
         pItemOutput.accept(ModItems.RICE_SEEDS.get());
         pItemOutput.accept(ModItems.RICE_BOWL.get());
+        pItemOutput.accept(ModItems.FIREFLY_SPAWN_EGG.get());
     }).build());
     public static void register(IEventBus eventBus){
         CREATIVE_TAB.register(eventBus);

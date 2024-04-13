@@ -4,7 +4,9 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.LightLayer;
 import org.exampl.japan_mod.Japan_mod;
 import org.exampl.japan_mod.entity.custom.FireflyEntity;
 
@@ -21,5 +23,8 @@ public class FireflyRenderer extends MobRenderer<FireflyEntity, FireflyModel<Fir
     public void render(FireflyEntity pEntity, float pEntityYaw, float pPartialTicks, PoseStack pMatrixStack,
                        MultiBufferSource pBuffer, int pPackedLight){
         super.render(pEntity,pEntityYaw, pPartialTicks, pMatrixStack, pBuffer, pPackedLight );
+    }
+    protected int getBlockLightLevel(FireflyEntity pEntity, BlockPos pPos) {
+        return (pEntity.level().getBrightness(LightLayer.BLOCK, pPos) < 8) ? 15 - pEntity.level().getBrightness(LightLayer.BLOCK, pPos) : pEntity.level().getBrightness(LightLayer.BLOCK, pPos);
     }
 }

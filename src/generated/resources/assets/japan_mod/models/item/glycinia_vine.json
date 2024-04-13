@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "japan_mod:item/glycinia_vine"
+  }
+}

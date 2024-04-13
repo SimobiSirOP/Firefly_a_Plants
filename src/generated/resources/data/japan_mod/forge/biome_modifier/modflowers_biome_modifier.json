@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#forge:is_plains",
-  "features": "japan_mod:pijerys_placed_key",
+  "features": "japan_mod:modflowers_placed_plains_key",
   "step": "vegetal_decoration"
 }
