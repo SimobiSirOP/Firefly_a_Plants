@@ -1,9 +1,0 @@
-{
-  "parent": "japan_mod:block/special_door_top_right_open",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "bottom": "japan_mod:block/glycinia_door_bottom",
-    "side": "japan_mod:block/glycinia_door_side",
-    "top": "japan_mod:block/glycinia_door_top"
-  }
-}

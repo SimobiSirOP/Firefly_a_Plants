@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "firefly_a_plants:block/lotos"
+      },
+      {
+        "model": "firefly_a_plants:block/lotos",
+        "y": 90
+      },
+      {
+        "model": "firefly_a_plants:block/lotos",
+        "y": 180
+      },
+      {
+        "model": "firefly_a_plants:block/lotos",
+        "y": 270
+      }
+    ]
+  }
+}

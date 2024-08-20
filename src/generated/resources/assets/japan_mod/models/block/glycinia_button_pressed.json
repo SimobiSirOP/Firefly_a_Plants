@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/button_pressed",
-  "textures": {
-    "texture": "japan_mod:block/glycinia_planks"
-  }
-}

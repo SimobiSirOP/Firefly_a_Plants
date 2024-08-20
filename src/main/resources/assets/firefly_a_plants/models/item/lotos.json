@@ -1,0 +1,18 @@
+{
+  "parent": "firefly_a_plants:block/lotos",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent":"firefly_a_plants:block/lotos"
+  },
+  "perspectives": {
+          "gui":{
+            "parent": "firefly_a_plants:item/lotos_2d"
+          },
+    "ground":{
+      "parent": "firefly_a_plants:item/lotos_2d"
+    },
+    "fixed":{
+      "parent": "firefly_a_plants:item/lotos_2d"
+    }
+  }
+}

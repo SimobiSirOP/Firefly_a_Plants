@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "japan_mod:item/firefly_spawn_egg_0",
-    "layer1": "japan_mod:item/firefly_spawn_egg_1"
-  }
-}
